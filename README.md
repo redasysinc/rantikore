@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# RANTIKORE
+# React + ANT desIgn + KOa + REact-router-dom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with a KOA backend, ANT DESIGN UI components, with a custom theme, and zustand for state management. The "main" branch of the repo should be used as the template.
 
-Currently, two official plugins are available:
+The portal branch should be used for demo purposes. It acts as a proof of concept that UIs can be auto generated with a minimum of configuration and zero coding. Read only pages and Forms to make persistent mutations to data from any source can be achieved via the properties of the TYPE and templated form/UI 
+controls which allows to rapid development and more productive teams. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The portal is as follows:
 
-## Expanding the ESLint configuration
+HOME - a static landing page containing multiple components as well as an embedded (iframe) video from a third party source (youTube).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+SEARCH - This is a component which utilizes object.keys to display medical professional data obtained via the backend which consumes a RapidAPI resource which serves medical professional data by NPI number. Data is fetched from the ReST service at RapidAPI, then cached for subsequent retrieval for a brief time. Then it is passed back to the client app where the not only the UI is generated dynamically, but also a typescript interface is logged for retrieval by the developer to aid in model/type creation.
 
-- Configure the top-level `parserOptions` property like this:
+This project is ongoing and will be tracked here. As of 7/6/2024 - I have spend a total of 6 hours on its coding. As you can see, this is RAD at its finest.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+TODO: 
+- Enable JSON configuration of the display/editable fields on a per entity basis. 
+- Enable DB support and bring in an ORM. 
+- Generate the editors
+- Diversify the data pool with other, non-related types.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Questions or issues: redasys@yahoo.com
