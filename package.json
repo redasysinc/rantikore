@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "npx tsx server/index.ts | vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
     "server": "npx tsx server/index.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
