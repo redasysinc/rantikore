@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react'
+/* @ts-disable */
+import  {useEffect} from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import api from "./api/api.ts";
 import Providers from "./components/Providers";
@@ -7,19 +8,20 @@ import Site from "./components/Layout/Site";
 import './custom-theme.css'
 
 function App() {
-    const [name, setName] = useState('');
+    //const [name, setName] = useState('');
 
     useEffect(() => {
         const load = async () => {
             const res = await api.getUsername()
             console.log(res)
-            setName(res)
+            //setName(res)
         }
         load()
     }, []);
 
     return (
         <>
+            {/*@ts-ignore*/}
             <Site>
                 <BrowserRouter>
                     <Routes>

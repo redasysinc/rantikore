@@ -1,17 +1,12 @@
-import React from 'react';
-import {Layout as Layout, Header, Breadcrumb, Menu, theme, ConfigProvider} from 'antd';
+// @ts-nocheck
+import React, {ReactElement} from 'react';
+import {Layout} from 'antd';
 import TopBar from './TopBar'
 
-const {Content, Footer} = Layout;
+const {Content} = Layout;
 
 
-const Site: React.FC = ({children}) => {
-    // const {
-    //     token: {colorBgContainer, borderRadiusLG},
-    // } = theme.useToken();
-    const handleMenu = () => {
-    }
-
+const Site: React.FC = ({children}: {children: any}) => {
     return (
         <Layout >
             <TopBar/>

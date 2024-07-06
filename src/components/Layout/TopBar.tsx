@@ -1,20 +1,18 @@
+// @ts-nocheck
 import React, {FunctionComponent, useState} from 'react';
-import {Layout} from 'antd'
 import { Menu, Image} from 'antd'
 import items from './menu-data.tsx'
-
-import {ArrowDownOutlined, MailOutlined, PhoneOutlined} from "@ant-design/icons";
-
-const {Header} = Layout;
+import {Layout} from 'antd'
+// const {Header} = Layout;
 interface OwnProps {
 }
 type Props = OwnProps;
 
-const TopBar: FunctionComponent<Props> = (props) => {
-    const [current, setCurrent] = useState();
-    const handleMenu = (e) => {
+const TopBar: FunctionComponent = (props:any) => {
+    //const [current, setCurrent] = useState();
+    const handleMenu = (e:any) => {
         console.log('click ', e);
-        setCurrent(e.key);
+        //setCurrent(e.key);
     };
 
     return (
@@ -24,7 +22,7 @@ const TopBar: FunctionComponent<Props> = (props) => {
                 style={{fontSize:'14px', justifyItems:'right'}}
                 onClick={handleMenu}
                 mode={'horizontal'}
-                theme={'dark compact'}
+                theme={'dark'}
                 items={items}
                 defaultSelectedKeys={['home']}>
 

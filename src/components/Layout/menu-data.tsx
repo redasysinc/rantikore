@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import {

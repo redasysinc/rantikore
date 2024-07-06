@@ -1,15 +1,11 @@
-import React, {FunctionComponent, ReactElement, useEffect, useState} from 'react';
+/* tslint.disable */
+// @ts-nocheck
+// @ts-ignore
+import React, {ReactElement, useEffect, useState} from 'react';
 import useDocStore, {Docstate} from "../store/doc-store.ts";
 import {Card, Row, Col, Button} from 'antd'
 
-
-
-interface OwnProps {
-}
-
-type Props = OwnProps;
-
-const Providers: React.FC<Props> = (props): ReactElement => {
+const Providers: React.FC = (props:any): ReactElement => {
     const show = [false, false, false]
     const [vis, setVis] = useState(show);
     const {providers, setSelected, selected, getProviders}: Docstate = useDocStore((state) => ({

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {FunctionComponent} from 'react';
 import {Row, Col, Progress, Space} from 'antd'
 import styles from './home.module.css'

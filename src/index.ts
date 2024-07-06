@@ -7,8 +7,6 @@ module.exports = {
   '@warning-color': '#ffc440',
   '@error-color': '#d93026',
   '@processing-color': '@primary-color',
-  '@body-background': '#c8c8ff',
-  '@component-background': '#99ceff',
   '@text-color': 'fade(#000, 65%)',
   '@text-color-secondary': 'fade(#000, 45%)',
   '@border-color-base': '#dedede',

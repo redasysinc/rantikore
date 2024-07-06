@@ -1,5 +1,4 @@
 import axios from 'axios'
-import npis from './npis'
 
 axios.defaults.baseURL = 'http://localhost:8080/api';
 
@@ -18,7 +17,7 @@ export default {
         console.log(result.data)
         return result.data;
     },
-    getProfessional: async (npi) =>{
+    getProfessional: async (npi:string) =>{
         const result = await axios.get(`/doclist?npi=${npi}`)
         console.log('client api:', result)
         localStorage.setItem(npi, JSON.stringify(result))

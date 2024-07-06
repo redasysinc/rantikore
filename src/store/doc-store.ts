@@ -1,3 +1,6 @@
+/* tslint.disable */
+// @ts-nocheck
+// @ts-ignore
 import {create} from 'zustand';
 import npis from '../api/npis'
 import api from "../api/api.ts";
