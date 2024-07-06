@@ -25,8 +25,9 @@ function App() {
             <Site>
                 <BrowserRouter>
                     <Routes>
-                        <Route path={'/providers'} element={<Providers/>} />
-                        <Route path={'/search'} element={<Providers/>} />
+                        <Route exact path={'/rantikore/providers'} element={<Providers/>} />
+                        <Route exact path={'/rantikore/search'} element={<Providers/>} />
+                        <Route exact path={'/rantikore'} element={<Home/>} />
                         <Route path={'/'} element={<Home/>} />
                     </Routes>
                 </BrowserRouter>
