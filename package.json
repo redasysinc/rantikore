@@ -2,6 +2,7 @@
   "name": "rantikore",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://redasysinc.github.io/rantikore/",
   "scripts": {
     "dev": "npx tsx server/index.ts | vite",
     "predeploy": "npm run build",
@@ -44,6 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "gh-pages": "^6.1.1",
     "json-server": "^1.0.0-beta.1",
     "less": "^4.2.0",
     "nodemon": "^3.1.4",
