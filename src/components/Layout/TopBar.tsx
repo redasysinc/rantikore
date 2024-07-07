@@ -1,18 +1,23 @@
 // @ts-nocheck
-import React, {FunctionComponent, useState} from 'react';
+import React, {FunctionComponent, useRef, useState} from 'react';
 import { Menu, Image} from 'antd'
 import items from './menu-data.tsx'
 import {Layout} from 'antd'
+import useDocStore, {Docstate} from "../../store/doc-store.ts";
 // const {Header} = Layout;
 interface OwnProps {
 }
 type Props = OwnProps;
 
 const TopBar: FunctionComponent = (props:any) => {
-    //const [current, setCurrent] = useState();
+    const navRef = useRef(null);
+    const {location, setLocation}: Docstate = useDocStore((state) => ({
+        location: state.location,
+        setLocation: state.setLocation
+    }))
     const handleMenu = (e:any) => {
-        console.log('click ', e);
-        //setCurrent(e.key);
+        setLocation(e.key.split('.'))
+        console.log('click ', e, location);
     };
 
     return (
@@ -24,7 +29,8 @@ const TopBar: FunctionComponent = (props:any) => {
                 mode={'horizontal'}
                 theme={'dark'}
                 items={items}
-                defaultSelectedKeys={['home']}>
+                ref={navRef}
+                defaultSelectedKeys={[location]}>
 
                 {/*<Menu.Item key={'home'}>HOME</Menu.Item>*/}
                 {/*<Menu.Item key={'news'}>NEWS</Menu.Item>*/}

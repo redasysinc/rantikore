@@ -3,20 +3,22 @@ import React, {ReactElement} from 'react';
 import {Layout} from 'antd';
 import TopBar from './TopBar'
 
-const {Content} = Layout;
+const {Header, Content} = Layout;
 
 
-const Site: React.FC = ({children}: {children: any}) => {
+const Site: React.FC = ({children}: { children: any }) => {
     return (
-        <Layout >
-            <TopBar/>
-            <Content >
+        <Layout>
+            <Header>
+                <TopBar/>
+            </Header>
+            <Content>
                 {/*<Breadcrumb style={{margin: '16px 0'}}>*/}
                 {/*    <Breadcrumb.Item>TO</Breadcrumb.Item>*/}
                 {/*    <Breadcrumb.Item>DO</Breadcrumb.Item>*/}
                 {/*    <Breadcrumb.Item>IMPLEMENT</Breadcrumb.Item>*/}
                 {/*</Breadcrumb>*/}
-                <div >
+                <div>
                     {children}
                 </div>
             </Content>

@@ -8,24 +8,36 @@ import {IProfessional, HealthcareProviderDaum} from '../types/iprofessional'
 
 export interface Docstate {
     npiList: string[],
-    selected: IProfessional,
+    selected?: IProfessional,
     setSelected: Function,
     providers: IProfessional[],
     getProviders: Function,
+    location: string[],
+    setLocation: Function,
 }
 
-const useDocStore = create((set)=>( {
+const useDocStore = create((set) => ({
     npiList: npis,
-    selected: null,
+    selected: {},
+    location: [],
     providers: [],
-    setSelected: async (npi)=>{
-        const doctor = await api.getProfessional(npi)
-        set((state)=>({selected:doctor}))
+    setLocation: (loc: string[]) => {
+        console.log('setting loc', loc)
+        set((state) => ({location: loc}))
     },
-    getProviders: async ()=>{
+    setSelected: async (npi?:string) => {
+        if(!npi) {
+            console.log('resetting selected')
+            set((state) => ({selected: {}}))
+        }else {
+            const doctor = await api.getProfessional(npi)
+            set((state) => ({selected: doctor}))
+        }
+    },
+    getProviders: async () => {
         const result = await api.getMedicalProfessionals()
         console.log(result)
-        set((state)=>({providers: result}))
+        set((state) => ({providers: result}))
     }
 }))
 

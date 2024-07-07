@@ -1,7 +1,58 @@
 .bannerSlider {
-    background-image: url(../../assets/images/banner.JPEG);
+    background-image: url(../../../public/images/banner.JPEG);
     min-height: 20vh;
     margin-bottom: 20px;
+    min-width: 100%;
+}
+
+.servicesPhoto {
+    background-image: url(../../../public/images/newborn.JPEG);
+    min-height: 200px;
+    padding: 90px 25px 50px 50px
+}
+
+.servicesPhoto h1 {
+    color: #000c17;
+}
+
+.mothercare{
+    background-image: url(../../../public/images/mothercare.JPEG);
+    min-height: 200px;
+    padding: 90px 25px 50px 110px
+}
+
+.mothercare h1 {
+    color: whitesmoke !important;
+}
+
+.criticaltreatement{
+    background-image: url(../../../public/images/criticaltreatement.JPEG);
+    min-height: 200px;
+    padding: 100px 25px 50px 25px
+}
+
+.criticaltreatement h1 {
+    color: #000c17;
+}
+
+.lab{
+    background-image: url(../../../public/images/lab.JPEG);
+    min-height: 200px;
+    padding: 100px 25px 50px 25px
+}
+
+.lab h1 {
+    color: whitesmoke !important;
+}
+
+.test{
+    background-image: url(../../../public/images/test.JPEG);
+    min-height: 200px;
+    padding: 100px 25px 50px 25px
+}
+
+.test h1 {
+    color: whitesmoke !important;
 }
 
 iframe {
@@ -14,7 +65,7 @@ iframe {
 
 h6 {
     min-width: 200%;
-    color:#000;
+    color: #000;
     align-text: 'left';
 }
 

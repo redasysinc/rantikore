@@ -1,6 +1,8 @@
+import url('./custom-theme.css')
+
 #root {
-  max-width: 1280px;
-  min-width: 1200px;
+  max-width: 1080px;
+  min-width: 800px;
   min-height: 100vh;
   margin: auto auto;
   padding: 2rem;

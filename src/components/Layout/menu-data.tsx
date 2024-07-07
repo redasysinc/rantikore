@@ -16,7 +16,7 @@ type MenuItem = Required<MenuProps>['items'][number];
 const items: MenuItem[] = [
     {
         key: '',
-        label: (<img src='./src/assets/images/appointment.JPEG'  height="60px" alt="logo"/>)
+        label: (<img src='./images/appointment.JPEG'  height="60px" alt="logo"/>)
     },
     {
         label: (<a href={'/'}>HOME</a>),
@@ -54,13 +54,13 @@ const items: MenuItem[] = [
         icon: <MedicineBoxTwoTone />,
         children: [
             {
-                label: (<a href={'search'}>'Find a Provider'</a>),
-                key: 'search',
+                label: (<a href={'./providers'}>'Find a Provider'</a>),
+                key: 'providers.search',
 
             },
             {
                 label: 'My Providers',
-                key: 'myProviders',
+                key: 'providers.myProviders',
             },
         ],
     },
