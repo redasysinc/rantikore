@@ -13,9 +13,7 @@ _.get('/api/getUsername', async (ctx) => {
     ctx.body = {username: os.userInfo().username};
 })
 _.get('/api/doclist', async (ctx, next) => {
-    console.log(ctx.query)
     const npi = ctx.query['npi']
-    console.log('npi', npi)
     const options = {
         method: 'GET',
         //url: 'https://us-doctors-and-medical-professionals.p.rapidapi.com/search_npi',
@@ -29,7 +27,6 @@ _.get('/api/doclist', async (ctx, next) => {
         ctx.body = Doclist
         return;
     }
-    console.log("didn't find doclist, calling rapidapi")
     let res = []
     try {
         //const response = await axios.request(options);
@@ -56,7 +53,9 @@ _.get('/api/mental', async (ctx, next) => {
 
     try {
         const response = await axios.request(options);
-        console.log(response.data);
+        //console.log(response.data);
+        ctx.body = response.data
+
     } catch (error) {
         console.error(error);
     }

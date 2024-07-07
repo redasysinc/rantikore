@@ -7,6 +7,7 @@ import {Card, Row, Col, Button} from 'antd'
 import Provider from "./Provider.tsx";
 
 const Providers: React.FC = (props:any): ReactElement => {
+    const [dir, setDir] = useState('')
     const {providers, setSelected, selected, getProviders}: Docstate = useDocStore((state) => ({
         providers: state.providers,
         setSelected: state.setSelected,
@@ -20,15 +21,17 @@ const Providers: React.FC = (props:any): ReactElement => {
 
     const handleSelection = async (npi: string) =>{
         if(selected.NPI === npi){
+            setDir('fade-down')
             await setSelected(null)
             return;
         }
+        setDir('fade-up')
         await setSelected(npi)
     }
 
     return (
         <>
-            {selected.NPI && <Provider />}
+            {selected.NPI && <Provider fadeDirection={dir} />}
             <div style={{textAlign: 'center'}}>
             <h3 style={{margin: '15px auto 20px auto'}}>Here are a few {selected.NPI&&'more '}Healthcare Providers that may interest you:</h3>
             </div>

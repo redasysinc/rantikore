@@ -17,7 +17,6 @@ const TopBar: FunctionComponent = (props:any) => {
     }))
     const handleMenu = (e:any) => {
         setLocation(e.key.split('.'))
-        console.log('click ', e, location);
     };
 
     return (

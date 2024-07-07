@@ -10,6 +10,7 @@ import {
     MedicineBoxTwoTone
 } from "@ant-design/icons";
 import React from "react";
+import {Link, NavLink} from "react-router-dom";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -19,7 +20,7 @@ const items: MenuItem[] = [
         label: (<img src='./images/appointment.JPEG'  height="60px" alt="logo"/>)
     },
     {
-        label: (<a href={'/'}>HOME</a>),
+        label: (<NavLink to='/'>HOME</NavLink>),
         key: 'home',
         icon: <HomeTwoTone/>,
         disabled: false,
@@ -54,9 +55,8 @@ const items: MenuItem[] = [
         icon: <MedicineBoxTwoTone />,
         children: [
             {
-                label: (<a href={'./providers'}>'Find a Provider'</a>),
-                key: 'providers.search',
-
+                label: (<NavLink to="/providers">'Find a Provider'</NavLink>),
+                key: 'providers.search'
             },
             {
                 label: 'My Providers',

@@ -19,7 +19,7 @@ const Home: FunctionComponent<Props> = (props) => {
                     </div>
                 </div>
             </div>
-            <div style={{width: '95%', margin: 'auto'}}>
+            <div style={{width: '95%', display: "block", margin: '25px auto'}}>
                 <Row gutter={16}>
                     <Col span={12}>
 

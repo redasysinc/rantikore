@@ -22,12 +22,10 @@ const useDocStore = create((set) => ({
     location: [],
     providers: [],
     setLocation: (loc: string[]) => {
-        console.log('setting loc', loc)
-        set((state) => ({location: loc}))
+        set((state) => ({location: loc[0]}))
     },
     setSelected: async (npi?:string) => {
         if(!npi) {
-            console.log('resetting selected')
             set((state) => ({selected: {}}))
         }else {
             const doctor = await api.getProfessional(npi)
@@ -36,7 +34,6 @@ const useDocStore = create((set) => ({
     },
     getProviders: async () => {
         const result = await api.getMedicalProfessionals()
-        console.log(result)
         set((state) => ({providers: result}))
     }
 }))

@@ -1,8 +1,6 @@
 import url('./custom-theme.css')
 
 #root {
-  max-width: 1080px;
-  min-width: 800px;
   min-height: 100vh;
   margin: auto auto;
   padding: 2rem;
@@ -10,12 +8,10 @@ import url('./custom-theme.css')
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #EBEFFF;
   color: whitesmoke;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,8 +20,9 @@ import url('./custom-theme.css')
 
 body{
   background-color: #cdcdff;
-  min-width: 100%;
+  min-width: 66vw;
 }
+
 .logo {
   height: 6em;
   padding: 1.5em;

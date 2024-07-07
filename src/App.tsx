@@ -1,36 +1,25 @@
 /* @ts-disable */
-import  {useEffect} from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import api from "./api/api.ts";
+import {Routes, Route} from 'react-router-dom'
 import Providers from "./components/Providers";
 import Home from './components/Home/Home'
 import Site from "./components/Layout/Site";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './custom-theme.css'
 
+AOS.init();
+
 function App() {
-    //const [name, setName] = useState('');
-
-    useEffect(() => {
-        const load = async () => {
-            const res = await api.getUsername()
-            console.log(res)
-            //setName(res)
-        }
-        load()
-    }, []);
-
     return (
         <>
             {/*@ts-ignore*/}
             <Site>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path={'/rantikore/providers'} element={<Providers />} />
-                        <Route path={'/rantikore/search'} element={<Providers />} />
-                        <Route path={'/rantikore'} element={<Home/>} />
-                        <Route path={'/'} element={<Home/>} />
-                    </Routes>
-                </BrowserRouter>
+                <Routes>
+                    <Route path={'/rantikore/providers'} element={<Providers data-aos={'fade-in'}/>}/>
+                    <Route path={'/providers'} element={<Providers data-aos={'fade-in'}/>}/>
+                    <Route path={'/rantikore/'} element={<Home data-aos={'fade-in'}/>}/>
+                    <Route path={'/'} element={<Home data-aos={'fade-in'}/>}/>
+                </Routes>
             </Site>
 
             {/*<h1>Vite + React</h1>*/}
