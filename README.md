@@ -12,7 +12,7 @@ HOME - a static landing page containing multiple components as well as an embedd
 
 SEARCH - This is a component which utilizes object.keys to display medical professional data obtained via the backend which consumes a RapidAPI resource which serves medical professional data by NPI number. Data is fetched from the ReST service at RapidAPI, then cached for subsequent retrieval for a brief time. Then it is passed back to the client app where the not only the UI is generated dynamically, but also a typescript interface is logged for retrieval by the developer to aid in model/type creation.
 
-This project is ongoing and will be tracked here. As of 7/6/2024 - I have spend a total of 6 hours on its coding. As you can see, this is RAD at its finest.
+This project is ongoing and will be tracked here. As of 7/8/2024 - I have spend a total of 16 hours on this project, most of which has been trying to get it to work on GH pages and figuring out ANTD, which is new to me. As you can see, this is RAD at its finest.
 
 TODO: 
 - Enable JSON configuration of the display/editable fields on a per entity basis. 
