@@ -6,6 +6,7 @@ import Site from "./components/Layout/Site";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './custom-theme.css'
+import Therapy from "./components/Therapy/Therapy.tsx";
 
 AOS.init();
 
@@ -15,9 +16,8 @@ function App() {
             {/*@ts-ignore*/}
             <Site>
                 <Routes>
-                    <Route path={'/rantikore/providers'} element={<Providers data-aos={'fade-in'}/>}/>
+                    <Route path={'/therapy'} element={<Therapy data-aos={'fade-in'}/>}/>
                     <Route path={'/providers'} element={<Providers data-aos={'fade-in'}/>}/>
-                    <Route path={'/rantikore/'} element={<Home data-aos={'fade-in'}/>}/>
                     <Route path={'/'} element={<Home data-aos={'fade-in'}/>}/>
                 </Routes>
             </Site>

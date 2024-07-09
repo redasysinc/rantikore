@@ -18,9 +18,14 @@ import url('./custom-theme.css')
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
-  background-color: #cdcdff;
-  min-width: 66vw;
+body {
+  margin: 0;
+  font-family: sans-serif;
+  min-width: 80vw;
+}
+#app {
+  width: 100vw;
+  height: 100vh;
 }
 
 .logo {

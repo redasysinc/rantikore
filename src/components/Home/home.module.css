@@ -1,14 +1,28 @@
 .bannerSlider {
+    display: block;
+    position: relative;
     background-image: url(../../../public/images/banner.JPEG);
+    background-repeat: no-repeat;
     min-height: 20vh;
     margin-bottom: 20px;
-    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.bannerContent{
+    display: inline-block;
+    margin: 50 auto;
 }
 
 .servicesPhoto {
     background-image: url(../../../public/images/newborn.JPEG);
     min-height: 200px;
     padding: 90px 25px 50px 50px
+}
+
+iframe {
+    width: 75%;
 }
 
 .servicesPhoto h1 {
