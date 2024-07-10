@@ -7,18 +7,42 @@ import ProviderMapbox from "../Mapbox/ProviderMapbox.tsx";
 import therapists, {preamble} from "./therapists.ts";
 import {consecutiveUniqueRandom} from "unique-random";
 import {ClockCircleTwoTone, PhoneTwoTone} from "@ant-design/icons";
+import DateGrid from '../Calendar/Calendar'
+import useTherapyStore from "../../store/therapy-store.ts";
 
 
-const {Content, Footer, Sider} = Layout
+const {Content, Header, Footer, Sider} = Layout
+
+const appointments = [{
+    date: new Date('7/12/2024 9:00AM'),
+    patient: 'John Doe'
+},
+    {
+        date: new Date('7/12/2024 9:30AM'),
+        patient: 'Richard Martin'
+    },
+    {
+        date: new Date('7/12/2024 11:00AM'),
+        patient: 'Duane Roland'
+    },
+    {
+        date: new Date('7/12/2024 11:30AM'),
+        patient: 'Jack Heimser'
+    },
+    {
+        date: new Date('7/12/2024 1:00PM'),
+        patient: 'Mary Ebert'
+    }]
+
 
 function Therapy() {
-    const [booking, setBooking] = useState(false)
+    const {provider, setProvider, isBooking, setIsBooking, appointments} = useTherapyStore()
+    const [date, setDate] = useState(new Date())
     const random = consecutiveUniqueRandom(0, therapists.length - 1);
-    const [vendor, setVendor] = useState()
     const selectMapItem = (e) => {
         const v = therapists[random()]
         console.log(v)
-        setVendor(v)
+        setProvider(v)
     }
     const ds = therapists.filter((t, i) => {
         return i < 5
@@ -29,8 +53,8 @@ function Therapy() {
     return (
         <>
             <Row>
-                <Col span={booking ? 12 : 24}>
-                    {vendor ?
+                <Col span={(isBooking || (!isBooking && appointments.length)) ? 12 : 24}>
+                    {provider ?
                         <Card style={{
                             fontSize: '1.25rem',
                             justifyContent: 'center',
@@ -38,18 +62,20 @@ function Therapy() {
                         }}>
                             <Layout>
                                 <Content>
-                                    <p>{vendor.profile.name}</p>
-                                    <p>{vendor.profile.company}</p>
-                                    <p>{vendor.profile.address}</p>
+                                    <p>{provider.profile.name}</p>
+                                    <p>{provider.profile.company}</p>
+                                    <p>{provider.profile.address}</p>
                                 </Content>
                                 <Footer>
                                     <div>
                                         <Button style={{marginRight: '30px'}} type={'danger'} onClick={() => {
-                                            setVendor(null)
+                                            setProvider(null)
+                                            setIsBooking(false)
                                         }}>Reset</Button>
-                                        <Button className={'btn'} type={'primary'} onCLick={() => {
-                                            setBooking(!booking)
-                                        }}><ClockCircleTwoTone/>View Schedule</Button>
+                                        <Button style={{marginRight: '30px'}} type={'primary'} onClick={() => {
+                                            setIsBooking(true)
+                                        }}><ClockCircleTwoTone/>Continue</Button>
+
                                     </div>
                                 </Footer>
                             </Layout>
@@ -59,25 +85,25 @@ function Therapy() {
                             margin: '0 auto 0 5px'
                         }}>{preamble}</Card>}
                 </Col>
-                <Col span={12}>
-
-                </Col>
+                {(isBooking || (!isBooking && appointments.length)) &&
+                    <DateGrid/>
+                }
             </Row>
             <Row gutter={0}>
                 <Col span={24}>
                     <Layout>
-                        <Sider >
-                            <Card style={{minWidth: '30vw', minHeight:'100%'}} title={'Choose one below:'}>
+                        <Sider>
+                            <Card style={{minWidth: '30vw', minHeight: '100%'}} title={'Choose one below:'}>
                                 <List dataSource={ds}
                                       renderItem={item => (
                                           <div style={{marginBottom: '15px', fontWeight: 500}} onClick={() => {
-                                              setVendor(therapists.filter(x => (x.profile.name === item))[0])
+                                              setProvider(therapists.filter(x => (x.profile.name === item))[0])
                                           }}>{item}</div>
                                       )}
                                 />
                             </Card>
                         </Sider>
-                        <Content >
+                        <Content>
                             <Card title={'Or, find a provider near you'} style={{minWidth: '100%'}}>
                                 <ProviderMapbox selectMapItem={selectMapItem}/>
                             </Card>

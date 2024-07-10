@@ -160,4 +160,4 @@ export default [{
     updatedAt: "2013-12-18T18:29:08.504Z"
 }]
 
-export const preamble = 'Welcome to The Portal! From here, you can get access to the therapy you need is a simple easy to use interface. Simply select a provider by selecting a map point, or clicking on a detail below and you will be able to book your appointment at the most convenient time for you. The results are stored with each practice and relayed to the providers directly and immediately.'
+export const preamble = 'Welcome to The Portal! From here, you can get access to the therapy you need is a simple easy to use interface. Simply select a provider by selecting a map point, or clicking on a detail below and you will be able to book your appointment at the most convenient time for you. Your choice of appointment will be relayed to the provider directly.'

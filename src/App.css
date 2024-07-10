@@ -64,3 +64,11 @@ body {
 .read-the-docs {
   color: #888;
 }
+
+.centered {
+  display: block;
+  width: 90%;
+  min-height: 50%;
+  margin: 0px auto;
+}
+

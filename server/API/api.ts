@@ -53,7 +53,6 @@ _.get('/api/mental', async (ctx, next) => {
 
     try {
         const response = await axios.request(options);
-        //console.log(response.data);
         ctx.body = response.data
 
     } catch (error) {
